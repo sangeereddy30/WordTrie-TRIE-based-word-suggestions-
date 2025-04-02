@@ -1,0 +1,105 @@
+body {
+    background-color: #3c0ae1;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.search-container {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    background: rgb(83, 157, 237);
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.search-box {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.search-box::placeholder {
+    color: black;
+}
+
+.search-icon {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(219, 224, 227);
+    border: 1px solid #dbe3e7;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.suggestions div:hover, .suggestions .selected {
+    background: #e7dfdf;
+}
+
+h2 {
+    text-align: center;
+    color: #0d1a03;
+    margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .search-box {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .suggestions {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
